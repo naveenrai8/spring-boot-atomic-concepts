@@ -1,7 +1,13 @@
 # Getting Started
 
 
-## Code Understanding
+## Code Walkthrough
+
+
+```java
+// to inform Spring boot that we are using web security
+@EnableWebSecurity
+```
 
 ```java
  @Bean
