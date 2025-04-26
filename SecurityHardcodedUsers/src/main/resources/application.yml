@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: SecurityHardcodedUsers
+  security:
+    user:
+      name: user_name
+      password: password
