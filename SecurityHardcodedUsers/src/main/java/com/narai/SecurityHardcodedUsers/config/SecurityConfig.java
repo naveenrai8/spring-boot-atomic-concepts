@@ -23,12 +23,10 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
                 .authorizeHttpRequests(
-                        auth -> auth.requestMatchers("/welcome").permitAll()
-                )
-                .authorizeHttpRequests(
-                        // either we can go with specific paths or any paths
-                        //auth -> auth.requestMatchers("/api/v1/product/**").authenticated()
-                        auth -> auth.anyRequest().authenticated()
+                        request ->
+                                request
+                                        .requestMatchers("/health-check").permitAll()
+                                        .anyRequest().authenticated()
                 )
                 //.httpBasic( Customizer.withDefaults())
                 .formLogin(Customizer.withDefaults())
